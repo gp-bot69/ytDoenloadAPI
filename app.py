@@ -2,9 +2,27 @@ from flask import Flask, request, jsonify
 
 from yt_dlp import YoutubeDL
 
+import os
+
 
 
 app = Flask(__name__)
+
+
+
+# Path to the cookies file
+
+cookies_file = "cookies.txt"
+
+
+
+def get_cookies():
+
+    if os.path.exists(cookies_file):
+
+        return cookies_file
+
+    return None
 
 
 
@@ -24,7 +42,9 @@ def download_video():
 
     ydl_opts = {
 
-        'quiet': True
+        'quiet': True,
+
+        'cookiefile': get_cookies()
 
     }
 

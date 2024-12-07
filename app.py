@@ -12,7 +12,7 @@ app = Flask(__name__)
 
 # Path to the cookies file
 
-cookies_file = "cookies.txt"
+cookies_file = "cookie.txt"
 
 
 
